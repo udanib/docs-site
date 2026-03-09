@@ -1,0 +1,8 @@
+control_id: SBS-MON-005
+risk_level: Moderate
+
+remediation:
+  scope: mechanism
+
+task:
+  title_template: "Implement continuous API usage monitoring against Salesforce limits"

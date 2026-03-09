@@ -1,0 +1,8 @@
+control_id: SBS-MON-004
+risk_level: High
+
+remediation:
+  scope: mechanism
+
+task:
+  title_template: "Implement continuous monitoring and alerting for suspicious API activity"

@@ -119,6 +119,23 @@ Organizations using source-driven development for Salesforce must implement auto
 **SBS-DEP-006: Configure Salesforce CLI Connected App with Token Expiration Policies**
 Organizations must configure the Connected App used for Salesforce CLI authentication with refresh token expiration of 90 days or less and access token timeout of 15 minutes or less.
 
+## Event Monitoring
+
+**SBS-MON-001: Enable Event Monitoring Log Storage**
+Organizations using Salesforce Event Monitoring must ensure that storage of required Event Monitoring logs is enabled for all event types necessary to support the organization's security monitoring and compliance policies.
+
+**SBS-MON-002: Retaining Event Logs**
+Organizations must retain security event logs for the defined retention period and implement measures to protect the logs from tampering and unauthorized deletion to ensure forensic availability.
+
+**SBS-MON-003: Monitor for Suspicious Logins**
+Organizations must continuously monitor and alert on anomalous login patterns to promptly detect and mitigate compromised accounts and application credentials.
+
+**SBS-MON-004: Monitor for Suspicious API Activity**
+Organizations must continuously monitor and alert on all API activity to establish a baseline, detect anomalous and malicious activity, and identify potential application and integration abuse in a timely manner.
+
+**SBS-MON-005: Monitor API Usage Against Limits**
+Organizations must implement continuous, real-time monitoring and alerting on current API usage against defined Salesforce limits to proactively prevent service disruptions.
+
 ## File Security
 
 **SBS-FILE-001: Require Expiry Dates on Public Content Links**
@@ -173,4 +190,4 @@ Salesforce production orgs must periodically review Health Check results against
 
 ---
 
-*Total Controls: 49*
+*Total Controls: 54*

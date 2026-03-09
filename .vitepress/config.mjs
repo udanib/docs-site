@@ -55,6 +55,7 @@ export default defineConfig({
           { text: 'Deployments', link: '/benchmark/deployments' },
           { text: 'Security Configuration', link: '/benchmark/security-configuration' },
           { text: 'File Security', link: '/benchmark/file-security' },
+          { text: 'Event Monitoring', link: '/benchmark/event-monitoring' },
         ]
       },
 
