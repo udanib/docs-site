@@ -10,8 +10,8 @@
   },
   "scripts": {
     "start": "npm run generate-regulations && vitepress dev",
-    "build": "npm run generate-regulations && vitepress build",
-    "preview": "npm run generate-regulations && vitepress preview",
+    "build": "python3 -m pip install -r requirements.txt && npm run generate-regulations && vitepress build",
+    "preview": "python3 -m pip install -r requirements.txt && npm run generate-regulations && vitepress preview",
     "generate-regulations": "python3 scripts/generate_regulation_pages.py",
     "generate-xml": "python3 scripts/generate_xml.py",
     "release": "bash scripts/release.sh"
