@@ -8,7 +8,6 @@ import re
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 from pathlib import Path
-import yaml
 
 REGULATION_BADGE_RE = re.compile(
     r'<span\s+title="(?P<rationale>[^"]+)">\s*<Badge\s+type="info"\s+text="(?P<name>[^"]+)"\s*/>\s*</span>'
@@ -158,6 +157,8 @@ def parse_markdown_file(filepath):
 
 def load_control_metadata(control_id, metadata_dir):
     """Load metadata YAML file for a control if it exists."""
+    import yaml
+
     metadata_file = metadata_dir / f"{control_id}.yaml"
     
     if not metadata_file.exists():

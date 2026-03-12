@@ -5,8 +5,9 @@ Generate regulation-focused documentation pages from SBS benchmark markdown file
 
 from collections import OrderedDict
 from pathlib import Path
+import re
 
-from generate_xml import load_control_metadata, parse_markdown_file, validate_metadata
+from generate_xml import parse_markdown_file
 
 REGULATIONS = [
     ("HIPAA", "hipaa"),
@@ -22,6 +23,7 @@ RISK_BADGE_TYPES = {
     "High": "warning",
     "Moderate": "tip",
 }
+RISK_TEXT_RE = re.compile(r'<Badge\s+type="[^"]+"\s+text="(?P<risk>Critical|High|Moderate)"\s*/>')
 
 
 def load_all_controls(benchmark_dir: Path):
@@ -32,19 +34,22 @@ def load_all_controls(benchmark_dir: Path):
     return controls
 
 
-def enrich_controls_with_metadata(controls, metadata_dir: Path):
-    """Attach risk metadata used by the generated regulation pages."""
+def extract_risk_level(risk_content: str):
+    """Extract the risk level directly from markdown badge markup."""
+    if not risk_content:
+        return ""
+
+    match = RISK_TEXT_RE.search(risk_content)
+    if not match:
+        return ""
+
+    return match.group("risk")
+
+
+def enrich_controls(controls):
+    """Attach derived fields used by the generated regulation pages."""
     for control in controls:
-        control["risk_level"] = ""
-        if not metadata_dir.exists():
-            continue
-
-        metadata = load_control_metadata(control.get("id", ""), metadata_dir)
-        if not metadata:
-            continue
-
-        validate_metadata(control.get("id", ""), metadata)
-        control["risk_level"] = metadata.get("risk_level", "")
+        control["risk_level"] = extract_risk_level(control.get("risk", ""))
 
 
 def build_regulation_index(controls):
@@ -221,11 +226,10 @@ def main():
     script_dir = Path(__file__).parent
     repo_root = script_dir.parent
     benchmark_dir = repo_root / "benchmark"
-    metadata_dir = repo_root / "control-metadata"
     output_dir = repo_root / "regulations"
 
     controls = load_all_controls(benchmark_dir)
-    enrich_controls_with_metadata(controls, metadata_dir)
+    enrich_controls(controls)
     grouped_controls = build_regulation_index(controls)
     write_pages(output_dir, grouped_controls)
 

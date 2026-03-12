@@ -57,7 +57,7 @@ These entries are an index into the benchmark. The canonical control content rem
 
 ### SBS-AUTH-004: Enforce Strong Multi-Factor Authentication for External Users with Substantial Access to Sensitive Data
 
-[Source page](/benchmark/authentication)
+<Badge type="danger" text="Critical" /> [Source page](/benchmark/authentication)
 
 **Control Statement:** All Salesforce interactive authentication flows for external human users with substantial access to sensitive data must enforce multi-factor authentication that includes at least one strong authentication factor.
 
