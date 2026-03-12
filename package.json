@@ -9,9 +9,10 @@
     "url": "https://github.com/Salesforce-Security-Benchmark/sbs.git"
   },
   "scripts": {
-    "start": "vitepress dev",
-    "build": "vitepress build",
-    "preview": "vitepress preview",
+    "start": "npm run generate-regulations && vitepress dev",
+    "build": "npm run generate-regulations && vitepress build",
+    "preview": "npm run generate-regulations && vitepress preview",
+    "generate-regulations": "python3 scripts/generate_regulation_pages.py",
     "generate-xml": "python3 scripts/generate_xml.py",
     "release": "bash scripts/release.sh"
   },

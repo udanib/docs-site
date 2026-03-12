@@ -10,6 +10,34 @@ from xml.dom import minidom
 from pathlib import Path
 import yaml
 
+REGULATION_BADGE_RE = re.compile(
+    r'<span\s+title="(?P<rationale>[^"]+)">\s*<Badge\s+type="info"\s+text="(?P<name>[^"]+)"\s*/>\s*</span>'
+)
+
+CATEGORY_FALLBACKS = {
+    "event-monitoring": "Event Monitoring",
+}
+
+
+def extract_regulation_badges(text):
+    """Extract regulation badges from the line immediately below a control title."""
+    badges = []
+    for match in REGULATION_BADGE_RE.finditer(text):
+        badges.append(
+            {
+                "name": match.group("name").strip(),
+                "rationale": match.group("rationale").strip(),
+            }
+        )
+    return badges
+
+
+def fallback_category_name(filepath):
+    """Provide a readable fallback category when a markdown file lacks a top-level ## heading."""
+    if filepath.stem in CATEGORY_FALLBACKS:
+        return CATEGORY_FALLBACKS[filepath.stem]
+    return filepath.stem.replace("-", " ").title()
+
 def parse_control_from_lines(lines, start_idx):
     """Parse a single control starting from the given line index."""
     control = {}
@@ -30,6 +58,11 @@ def parse_control_from_lines(lines, start_idx):
             if match:
                 control['id'] = match.group(1)
                 control['title'] = match.group(2).strip()
+        
+        elif current_field is None and '<Badge' in line:
+            badges = extract_regulation_badges(line.strip())
+            if badges:
+                control['regulations'] = badges
         
         # Check for field labels
         elif line.startswith('**Control Statement:**'):
@@ -111,8 +144,10 @@ def parse_markdown_file(filepath):
         elif line.startswith('### SBS-'):
             control, next_idx = parse_control_from_lines(lines, i)
             if control.get('id'):
-                control['category'] = category
+                control['category'] = category or fallback_category_name(filepath)
                 control['category_description'] = category_description
+                control['source_file'] = filepath.name
+                control['source_path'] = f"/benchmark/{filepath.stem}"
                 controls.append(control)
             i = next_idx
             continue

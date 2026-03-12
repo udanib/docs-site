@@ -1,6 +1,21 @@
 # SBS Control Generation Scripts
 
-This directory contains scripts for generating machine-readable representations of SBS controls.
+This directory contains scripts for generating machine-readable representations of SBS controls and generated documentation views.
+
+## generate_regulation_pages.py
+
+Parses all markdown control files in the `benchmark/` directory and generates a `regulations/` docs section containing:
+- a landing page with counts and links for each regulation
+- one page per regulation listing the tagged controls grouped by benchmark section
+
+### Usage
+
+```bash
+# From the project root
+python3 scripts/generate_regulation_pages.py
+```
+
+This will generate Markdown files in the `regulations/` directory. These files are used by the VitePress site and are regenerated automatically during the docs build.
 
 ## generate_xml.py
 
@@ -91,9 +106,10 @@ Each control includes all necessary information:
 ### Development Workflow
 
 1. Edit markdown files in `benchmark/`
-2. Test XML generation locally: `python3 scripts/generate_xml.py`
-3. Verify output looks correct: `cat sbs-controls.xml`
-4. Commit markdown changes (XML is gitignored)
-5. When ready to release, create a version tag
-6. GitHub Action automatically generates and publishes XML
+2. Regenerate regulation pages locally: `python3 scripts/generate_regulation_pages.py`
+3. Test XML generation locally: `python3 scripts/generate_xml.py`
+4. Verify output looks correct
+5. Commit markdown and documentation changes
+6. When ready to release, create a version tag
+7. GitHub Action automatically generates and publishes XML
 

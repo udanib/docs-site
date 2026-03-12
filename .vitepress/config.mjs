@@ -58,6 +58,18 @@ export default defineConfig({
           { text: 'Event Monitoring', link: '/benchmark/event-monitoring' },
         ]
       },
+      {
+        text: 'Regulations',
+        items: [
+          { text: 'Overview', link: '/regulations/' },
+          { text: 'HIPAA', link: '/regulations/hipaa' },
+          { text: 'GDPR', link: '/regulations/gdpr' },
+          { text: 'NIST', link: '/regulations/nist' },
+          { text: 'CCPA/CPRA', link: '/regulations/ccpa-cpra' },
+          { text: 'SOC 2', link: '/regulations/soc-2' },
+          { text: 'ISO 27001', link: '/regulations/iso-27001' },
+        ]
+      },
 
     ]
   }
