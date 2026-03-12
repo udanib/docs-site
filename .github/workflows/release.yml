@@ -34,6 +34,12 @@ jobs:
           echo "Generated XML file:"
           ls -lh sbs-controls.xml
       
+      - name: Generate audit workbook (Excel)
+        run: |
+          python3 scripts/generate_excel.py
+          echo "Generated audit workbook:"
+          ls -lh sbs-audit-workbook.xlsx
+      
       - name: Extract version from tag
         id: version
         run: |
@@ -44,7 +50,9 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          files: sbs-controls.xml
+          files: |
+            sbs-controls.xml
+            sbs-audit-workbook.xlsx
           body: |
             # Security Benchmark for Salesforce v${{ steps.version.outputs.version }}
             
@@ -97,8 +105,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Verify XML was attached
+      - name: Verify release assets were attached
         run: |
-          echo "✅ Release created with sbs-controls.xml attachment"
+          echo "✅ Release created with sbs-controls.xml and sbs-audit-workbook.xlsx"
           echo "Version: ${{ steps.version.outputs.version }}"
 

@@ -102,6 +102,34 @@ A Moderate control provides **assurance or defense-in-depth** that reduces the l
 
 **Examples:** Peer code review (SAST and testing also catch issues), documentation requirements (support auditability but don't prevent incidents), security training (reduces likelihood but other controls enforce boundaries).
 
+### Regulation Mapping
+
+SBS controls may be tagged with regulations and frameworks (e.g., HIPAA, GDPR, NIST, CCPA/CPRA, SOC 2) to indicate where a control directly supports demonstrating compliance. Tagging uses the same disciplined approach as risk modeling: apply criteria in order and tag only when a clear threshold is met. If every control were tagged with every regulation, the mapping would be meaningless.
+
+**Classification framework**
+
+To determine whether a control should be tagged with a given regulation, apply these questions in order:
+
+1. **Direct or named obligation** — Does this regulation explicitly require this *type* of control or this *kind* of evidence (e.g., access controls, access reviews, least privilege, audit trail for access)? If yes, tag. The control is a direct way to satisfy that obligation.
+
+2. **Necessary to demonstrate compliance** — Would an auditor or assessor for that framework routinely expect to see this control (or equivalent) to conclude that the organization meets the framework’s access, identity, or accountability requirements? If yes, tag. The control is part of the evidence set for that regulation. If no, go to 3.
+
+3. **Only generally supportive** — Is the link merely that “this improves security and security helps with every regulation”? If yes, **do not tag**. Tag only when the control is a direct or necessary part of demonstrating compliance with that regulation.
+
+**Per-regulation scope**
+
+When in doubt, be strict. Tag only when the control directly supports that framework’s distinct requirements:
+
+| Regulation | Tag when the control directly supports… |
+|------------|------------------------------------------|
+| **HIPAA** | Restricting or documenting who can access ePHI, or producing an audit trail for ePHI access. |
+| **GDPR** | Appropriate technical or organizational measures for personal data, or accountability (who had access and why). |
+| **NIST** | Access control, account management, least privilege, or audit of access. |
+| **CCPA/CPRA** | Reasonable security for California personal information (access control, accountability). |
+| **SOC 2** | Logical access, identity and access management, access removal, or documented IAM processes. |
+
+Regulation tags on controls are indicative, not exhaustive. They help readers quickly see where a control aligns with a given framework; they do not replace reading the regulation or conducting a formal gap assessment.
+
 ## 1.5 Versioning
 
 SBS uses a three-part version number: **MAJOR.MINOR.REVISION**
