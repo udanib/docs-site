@@ -4,6 +4,8 @@ This section defines controls related to OAuth-enabled Connected Apps, third-par
 
 ### SBS-OAUTH-001: Require Formal Installation of Connected Apps
 
+<span title="Restricting and governing third-party OAuth access to systems holding ePHI requires centrally managed Connected App controls."><Badge type="info" text="HIPAA" /></span> <span title="Appropriate technical and organizational measures for personal data include centrally governed OAuth application controls."><Badge type="info" text="GDPR" /></span> <span title="Access control and account management require administrators to govern which OAuth applications can establish access."><Badge type="info" text="NIST" /></span> <span title="Reasonable security for personal information includes centrally controlling OAuth integrations rather than unmanaged user-authorized access."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Logical access and identity management require centrally governed application access paths."><Badge type="info" text="SOC 2" /></span> <span title="Access control and secure authentication require formal governance of OAuth-enabled applications."><Badge type="info" text="ISO 27001" /></span>
+
 **Control Statement:** Organizations must formally install all connected apps used for OAuth authentication rather than relying on user-authorized OAuth connections.
 
 **Description:**  
@@ -27,6 +29,8 @@ When a user first authenticates to a connected app via OAuth, Salesforce automat
 
 ### SBS-OAUTH-002: Require Profile or Permission Set Access Control for Connected Apps
 
+<span title="Restricting who may use OAuth-enabled applications is a direct access control for systems processing ePHI."><Badge type="info" text="HIPAA" /></span> <span title="Appropriate technical measures for personal data include explicit access scoping for OAuth-enabled applications."><Badge type="info" text="GDPR" /></span> <span title="Least privilege and access enforcement require connected apps to be limited to explicitly authorized users."><Badge type="info" text="NIST" /></span> <span title="Reasonable security for personal information includes limiting connected app use to authorized users only."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Logical access and IAM controls require application access to be granted through explicit authorization models."><Badge type="info" text="SOC 2" /></span> <span title="Access control and privileged restriction require connected app access to be explicitly assigned and governed."><Badge type="info" text="ISO 27001" /></span>
+
 **Control Statement:** Organizations must control access to each formally installed connected app exclusively through assigned profiles or permission sets.
 
 **Description:**  
@@ -49,6 +53,8 @@ Without explicit profile or permission set access control, Connected Apps may al
 Salesforce does not require profile or permission set access control for connected apps by default. Access models vary based on connected app configuration.
 
 ### SBS-OAUTH-003: Add Criticality Classification of OAuth-Enabled Connected Apps
+
+<span title="Accountability for personal data access includes maintaining an inventory of OAuth-enabled applications and their business criticality."><Badge type="info" text="GDPR" /></span> <span title="Reasonable security for personal information includes maintaining visibility into which third-party applications can access Salesforce data."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Documented IAM and integration governance routinely expect an authoritative inventory of connected applications."><Badge type="info" text="SOC 2" /></span> <span title="Asset, supplier, and access governance controls support an authoritative inventory and criticality classification of connected applications."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** All OAuth-enabled Connected Apps must be recorded in an authoritative system of record and assigned a documented vendor criticality rating reflecting integration importance and data sensitivity.
 
@@ -74,6 +80,8 @@ Without a complete inventory and criticality classification, organizations lose 
 Salesforce does not automatically maintain or enforce an external inventory or criticality classification for Connected Apps.
 
 ### SBS-OAUTH-004: Due Diligence Documentation for High-Risk Connected App Vendors
+
+<span title="Due diligence for vendors handling personal data includes reviewing available privacy and security documentation for high-risk connected apps."><Badge type="info" text="GDPR" /></span> <span title="Reasonable security for personal information includes documented review of high-risk vendors that may access Salesforce data."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Supplier relationship and security governance controls support documented due diligence for high-risk connected app vendors."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Organizations must review and retain available security documentation for all high-risk Connected App vendors and explicitly record any missing documentation as part of the vendor assessment.
 

@@ -4,6 +4,8 @@ This section defines controls related to metadata deployment practices, configur
 
 ### SBS-DEP-001: Require a Designated Deployment Identity for Metadata Changes
 
+<span title="Account management and attributable administrative activity require production deployments to use a defined identity."><Badge type="info" text="NIST" /></span> <span title="Logical access and change accountability require production changes to be traceable to a controlled service identity."><Badge type="info" text="SOC 2" /></span> <span title="Privileged access control, identification, and change management require attributable deployment accounts."><Badge type="info" text="ISO 27001" /></span>
+
 **Control Statement:** Salesforce production orgs must designate a single deployment identity that is exclusively used for all metadata deployments and high-risk configuration changes performed through automated or scripted release processes.
 
 **Description:**  
@@ -28,6 +30,8 @@ Without a designated deployment identity, organizations cannot reliably attribut
 Salesforce does not create or enforce a dedicated deployment identity by default.
 
 ### SBS-DEP-002: Establish and Maintain a List of High-Risk Metadata Types Prohibited from Direct Production Editing
+
+<span title="Access enforcement and least privilege require defined boundaries around who may directly modify high-risk production metadata."><Badge type="info" text="NIST" /></span> <span title="Logical access governance requires explicit restrictions on direct edits to sensitive production configuration."><Badge type="info" text="SOC 2" /></span> <span title="Access restriction and change management require formally defined limits on direct production modification of high-risk metadata."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Salesforce production orgs must maintain an explicit list of high-risk metadata types that must never be edited directly in production by human users, defaulting at minimum to the SBS baseline list while allowing organizations to extend or refine it as needed.
 
@@ -54,6 +58,8 @@ Salesforce does not provide native restrictions or guidance preventing direct pr
 
 
 ### SBS-DEP-003: Monitor and Alert on Unauthorized Modifications to High-Risk Metadata
+
+<span title="Monitoring change activity to detect unauthorized modification of security-sensitive configuration is expected evidence for controlled operations."><Badge type="info" text="SOC 2" /></span> <span title="Logging and monitoring controls require detection and review of unauthorized changes to high-risk configuration."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Salesforce production orgs must implement a monitoring capability that detects and reports any modification to high-risk metadata performed by a user other than the designated deployment identity.
 
@@ -89,6 +95,8 @@ Salesforce does not provide built-in monitoring or alerting for unauthorized dir
 
 ### SBS-DEP-004 — Establish Source-Driven Development Process
 
+<span title="Secure system engineering and change management require controlled, repeatable, and traceable deployment processes."><Badge type="info" text="ISO 27001" /></span>
+
 **Control Statement**  
 Meaningful Salesforce metadata changes must be deployed through a source-driven, automated, and deterministic deployment process, except where the platform does not provide programmatic deployment support.
 
@@ -115,6 +123,8 @@ Without a source-driven deployment process, organizations lose the verifiable au
 Salesforce allows direct manual changes to most metadata in production and does not require source control or automated deployments by default.
 
 ### SBS-DEP-005: Implement Secret Scanning for Salesforce Source Repositories
+
+<span title="Secure development and protection of authentication secrets are direct ISO 27001 expectations for preventing credential exposure in source control."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Organizations using source-driven development for Salesforce must implement automated secret scanning on all repositories containing Salesforce metadata, configuration, or deployment scripts to detect and prevent the exposure of credentials, access tokens, and other sensitive authentication material.
 
@@ -144,6 +154,8 @@ Exposed Salesforce credentials in source repositories represent a direct path to
 Salesforce does not provide secret scanning capabilities; organizations must implement scanning through their source control platform or third-party tooling. Credentials can be freely committed to repositories without any native detection or prevention.
 
 ### SBS-DEP-006: Configure Salesforce CLI Connected App with Token Expiration Policies
+
+<span title="Authenticator lifecycle and session management require expiration controls for persistent OAuth tokens used for administrative access."><Badge type="info" text="NIST" /></span> <span title="Identity and access management require controlled token lifetime and session duration for CLI-based administrative access."><Badge type="info" text="SOC 2" /></span> <span title="Access control and secure authentication require restrictions on token lifetime and session timeout."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Organizations must configure the Connected App used for Salesforce CLI authentication with refresh token expiration of 90 days or less and access token timeout of 15 minutes or less.
 

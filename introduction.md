@@ -104,7 +104,7 @@ A Moderate control provides **assurance or defense-in-depth** that reduces the l
 
 ### Regulation Mapping
 
-SBS controls may be tagged with regulations and frameworks (e.g., HIPAA, GDPR, NIST, CCPA/CPRA, SOC 2) to indicate where a control directly supports demonstrating compliance. Tagging uses the same disciplined approach as risk modeling: apply criteria in order and tag only when a clear threshold is met. If every control were tagged with every regulation, the mapping would be meaningless.
+SBS controls may be tagged with regulations and frameworks (e.g., HIPAA, GDPR, NIST, CCPA/CPRA, SOC 2, ISO 27001) to indicate where a control directly supports demonstrating compliance. Tagging uses the same disciplined approach as risk modeling: apply criteria in order and tag only when a clear threshold is met. If every control were tagged with every regulation, the mapping would be meaningless.
 
 **Classification framework**
 
@@ -115,6 +115,14 @@ To determine whether a control should be tagged with a given regulation, apply t
 2. **Necessary to demonstrate compliance** — Would an auditor or assessor for that framework routinely expect to see this control (or equivalent) to conclude that the organization meets the framework’s access, identity, or accountability requirements? If yes, tag. The control is part of the evidence set for that regulation. If no, go to 3.
 
 3. **Only generally supportive** — Is the link merely that “this improves security and security helps with every regulation”? If yes, **do not tag**. Tag only when the control is a direct or necessary part of demonstrating compliance with that regulation.
+
+**Practical guardrails**
+
+- **Broad tagging should be rare.** Most controls should map to **one to three** frameworks, not all of them.
+- Tag **four or more** frameworks only when the control directly establishes or audits a core security boundary that nearly every listed framework would expect to see as evidence (for example, SSO enforcement, MFA for sensitive access, or explicit least-privilege review of actual user access).
+- Do **not** tag a control based on the section title alone. Evaluate the specific control statement and the evidence it produces.
+- Do **not** tag documentation, inventory, review, or governance controls as broadly as preventive boundary controls unless the framework would routinely expect that exact artifact or process as evidence.
+- If you are unsure, leave the tag off. Under-tagging is preferable to over-tagging.
 
 **Per-regulation scope**
 
@@ -127,8 +135,11 @@ When in doubt, be strict. Tag only when the control directly supports that frame
 | **NIST** | Access control, account management, least privilege, or audit of access. |
 | **CCPA/CPRA** | Reasonable security for California personal information (access control, accountability). |
 | **SOC 2** | Logical access, identity and access management, access removal, or documented IAM processes. |
+| **ISO 27001** | Annex A control objectives such as access control (A.5.15–A.5.18), secure system engineering and change management (A.8.2.4, A.8.3.2), logging (A.8.15), or other directly applicable controls. |
 
 Regulation tags on controls are indicative, not exhaustive. They help readers quickly see where a control aligns with a given framework; they do not replace reading the regulation or conducting a formal gap assessment.
+
+In practice, controls that directly gate authentication, establish authorization boundaries, remove access, or produce audit evidence of actual access will tend to justify more tags than controls that mainly improve governance, implementation quality, or operational maturity.
 
 ## 1.5 Versioning
 

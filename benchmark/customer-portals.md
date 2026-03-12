@@ -4,6 +4,8 @@ This section defines controls related to secure configuration and development pr
 
 ### SBS-CPORTAL-001: Prevent Insecure Direct Object Reference (IDOR) in Portal Apex
 
+<span title="Restricting who can access ePHI; server-side authorization prevents unauthorized record access."><Badge type="info" text="HIPAA" /></span> <span title="Appropriate technical measures to prevent unauthorized access to personal data."><Badge type="info" text="GDPR" /></span> <span title="Access control and enforcement; authorization must be validated server-side for every access."><Badge type="info" text="NIST" /></span> <span title="Reasonable security requires preventing unauthorized access to personal information."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Logical access controls must enforce authorization on every data access."><Badge type="info" text="SOC 2" /></span> <span title="Access control and information access restriction (A.5.15–A.5.18, A.8.3); authorization boundary."><Badge type="info" text="ISO 27001" /></span>
+
 **Control Statement:**  
 All Apex methods exposed to Experience Cloud or customer portal users must enforce server-side authorization for every record accessed or modified. User-supplied parameters (including record IDs, filters, field names, or relationship references) must not be trusted as the basis for access control and must be validated against the running user's sharing, CRUD, and FLS permissions before use.
 
@@ -45,6 +47,8 @@ If portal-exposed Apex trusts user-controlled parameters to determine record acc
 Salesforce does not validate user-supplied parameters in custom Apex. Developers are responsible for implementing server-side authorization controls in all portal-exposed methods.
 
 ### SBS-CPORTAL-002: Restrict Guest User Record Access
+
+<span title="Unauthenticated access to ePHI must be prohibited; guest restrictions enforce the access boundary."><Badge type="info" text="HIPAA" /></span> <span title="Appropriate measures to prevent unauthorized access to personal data; guest access must be restricted."><Badge type="info" text="GDPR" /></span> <span title="Access control requires restricting unauthenticated access to organizational data."><Badge type="info" text="NIST" /></span> <span title="Reasonable security requires no unauthenticated access to personal information."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Logical access must restrict guest and anonymous access to business data."><Badge type="info" text="SOC 2" /></span> <span title="Access control (A.5.15–A.5.18); unauthenticated access to information assets must be restricted."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Unauthenticated guest users in customer portals must be restricted to authentication and registration flows only, with no direct access to business objects or custom Apex methods that query organizational data.
 
@@ -94,6 +98,8 @@ Salesforce has progressively restricted guest user default permissions in recent
 
 ### SBS-CPORTAL-003: Inventory Portal-Exposed Apex Classes and Flows
 
+<span title="Asset management and access governance require an inventory of externally exposed components and who can access them."><Badge type="info" text="ISO 27001" /></span>
+
 **Control Statement:** Organizations must maintain an authoritative inventory of all Apex classes and Autolaunched Flows exposed to Experience Cloud sites, documenting which components are accessible to external and guest users.
 
 **Description:**  
@@ -121,6 +127,8 @@ Salesforce does not require or maintain an inventory of portal-exposed component
 
 ### SBS-CPORTAL-004: Prevent Parameter-Based Record Access in Portal-Exposed Flows
 
+<span title="Preventing unauthorized access to ePHI via flow inputs; record access must be authorized."><Badge type="info" text="HIPAA" /></span> <span title="Appropriate technical measures to prevent unauthorized access to personal data through flows."><Badge type="info" text="GDPR" /></span> <span title="Access control; user-supplied parameters must not bypass authorization in flows."><Badge type="info" text="NIST" /></span> <span title="Reasonable security requires preventing IDOR and unauthorized access to personal information."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Logical access controls must enforce authorization in all portal-exposed components."><Badge type="info" text="SOC 2" /></span> <span title="Access control (A.5.15–A.5.18, A.8.3); flows must not create unauthorized data access paths."><Badge type="info" text="ISO 27001" /></span>
+
 **Control Statement:** Autolaunched Flows exposed to customer portal users must not accept user-supplied input variables that directly determine which records are accessed.
 
 **Description:**  
@@ -144,6 +152,8 @@ Flows accepting user-controlled input variables for record access create IDOR vu
 Salesforce does not prevent flows from accepting user-supplied input variables. Autolaunched Flows run in system context without sharing by default.
 
 ### SBS-CPORTAL-005: Conduct Penetration Testing for Portal Security
+
+<span title="Article 32 requires regularly testing and evaluating the effectiveness of technical and organizational measures protecting personal data."><Badge type="info" text="GDPR" /></span> <span title="Managing technical vulnerabilities and secure system engineering (A.8.8, A.8.2.4) directly support security testing."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Organizations with Experience Cloud sites must conduct penetration testing of portal security controls before initial go-live and subsequently after major releases or on a defined cadence.
 

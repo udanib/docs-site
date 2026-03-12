@@ -4,6 +4,8 @@ This section defines controls related to outbound connectivity from Salesforce t
 
 ### SBS-INT-001: Enforce Governance of Browser Extensions Accessing Salesforce
 
+<span title="Logical access governance includes restricting unmanaged software that can interact with authenticated Salesforce sessions."><Badge type="info" text="SOC 2" /></span> <span title="Endpoint security, secure configuration, and information access restriction support controlling browser extensions that can access Salesforce."><Badge type="info" text="ISO 27001" /></span>
+
 **Control Statement:** Organizations must enforce a centrally managed mechanism that restricts which browser extensions are permitted to access Salesforce, and must not allow the use of unmanaged or uncontrolled extensions.
 
 **Description:**  
@@ -33,6 +35,8 @@ Salesforce provides no mechanism to prevent or detect browser extension usage; u
 
 ### SBS-INT-002: Inventory and Justification of Remote Site Settings
 
+<span title="Accountability for personal data flows includes documenting which outbound endpoints Salesforce is permitted to contact and why."><Badge type="info" text="GDPR" /></span> <span title="Documented governance of approved outbound endpoints supports control over data flows to external services."><Badge type="info" text="SOC 2" /></span> <span title="Information transfer and access governance controls support maintaining an authoritative inventory of approved outbound endpoints."><Badge type="info" text="ISO 27001" /></span>
+
 **Control Statement:** Organizations must maintain an authoritative inventory of all Remote Site Settings and document a business justification for each endpoint approved for Apex HTTP callouts.
 
 **Description:**  
@@ -58,6 +62,8 @@ Without a documented inventory and justification for Remote Site Settings, unvet
 Salesforce does not require or maintain business justification for Remote Site Settings and does not enforce an external inventory.
 
 ### SBS-INT-003: Inventory and Justification of Named Credentials
+
+<span title="Accountability for personal data access includes documenting authenticated external endpoints and why Salesforce is permitted to use them."><Badge type="info" text="GDPR" /></span> <span title="Documented governance of authenticated integrations supports control over which external services can be used from Salesforce."><Badge type="info" text="SOC 2" /></span> <span title="Access governance and information transfer controls support maintaining an authoritative inventory of authenticated outbound connections."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Organizations must maintain an authoritative inventory of all Named Credentials and document a business justification for each external endpoint and authentication configuration approved for use in Salesforce.
 
@@ -87,6 +93,8 @@ Without a documented inventory and justification for Named Credentials, undocume
 Salesforce does not maintain or enforce an external inventory or business justification for Named Credentials.
 
 ### SBS-INT-004: Retain API Total Usage Event Logs for 30 Days
+
+<span title="Producing and retaining an audit trail of API access supports investigation of access to ePHI through integrations and applications."><Badge type="info" text="HIPAA" /></span> <span title="Accountability for personal data access includes retaining API activity logs long enough to investigate exposure and misuse."><Badge type="info" text="GDPR" /></span> <span title="Audit of access includes retaining API usage logs so investigators can attribute and reconstruct activity."><Badge type="info" text="NIST" /></span> <span title="Reasonable security for personal information includes retaining API access logs needed to investigate misuse and exposure."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Logical access monitoring routinely expects retained logs of API and integration access activity."><Badge type="info" text="SOC 2" /></span> <span title="Logging and evidence-retention controls require retained API activity logs for investigation and response."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:**
 The organization must retain API Total Usage event log data (EventLogFile EventType=ApiTotalUsage) for at least the immediately preceding 30 days using Salesforce-native retention or automated external export and storage.

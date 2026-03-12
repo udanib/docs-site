@@ -4,6 +4,8 @@ This section defines controls related to secure development practices for Salesf
 
 ### SBS-CODE-001: Mandatory Peer Review for Salesforce Code Changes
 
+<span title="Secure system engineering (A.8.2.4) and change management (A.8.3.2); peer review is a named requirement."><Badge type="info" text="ISO 27001" /></span>
+
 **Control Statement:** All Salesforce code changes must undergo peer review and receive approval before merging into any production-bound branch.
 
 **Description:**  
@@ -27,6 +29,8 @@ Without mandatory peer review, a single developer—whether compromised, malicio
 Salesforce does not enforce code review requirements; these controls depend on the organization's source control configuration.
 
 ### SBS-CODE-002: Pre-Merge Static Code Analysis for Apex and LWC
+
+<span title="Secure system engineering (A.8.2.4); managing technical vulnerabilities and secure development are required."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Static code analysis with security checks for Apex and Lightning Web Components must execute successfully before any code change is merged into a production-bound branch.
 
@@ -52,6 +56,8 @@ Salesforce does not provide or enforce static code analysis; organizations must 
 
 ### SBS-CODE-003: Implement Persistent Apex Application Logging
 
+<span title="Ability to demonstrate appropriate measures and investigate incidents involving personal data."><Badge type="info" text="GDPR" /></span> <span title="Logging (A.8.15); events must be recorded and retained for incident investigation and evidence."><Badge type="info" text="ISO 27001" /></span>
+
 **Control Statement:** Organizations must implement an Apex-based logging framework that writes application log events to durable Salesforce storage and must not rely on transient Salesforce debug logs for operational or security investigations.
 
 **Description:**  
@@ -76,6 +82,8 @@ Salesforce debug logs are transient, size-limited, and automatically purged—ma
 Salesforce does not provide persistent application-level logging by default; debug logs are transient, size-limited, and automatically purged.
 
 ### SBS-CODE-004: Prevent Sensitive Data in Application Logs
+
+<span title="ePHI must not be exposed in logs; preventing sensitive data in logs is a direct safeguard."><Badge type="info" text="HIPAA" /></span> <span title="Personal data must not be captured or stored inappropriately; log sanitization is a technical measure."><Badge type="info" text="GDPR" /></span> <span title="Reasonable security requires preventing exposure of personal information in log storage."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Logging (A.8.15) and information security in development; logs must not expose sensitive information."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Custom application logging frameworks and Salesforce system logging mechanisms must not capture, store, or transmit credentials, authentication tokens, personally identifiable information (PII), regulated data, or other sensitive values in log messages or structured log fields.
 

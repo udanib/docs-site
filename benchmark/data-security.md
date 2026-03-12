@@ -4,6 +4,8 @@ This section defines controls related to the protection, classification, and man
 
 ### SBS-DATA-001: Implement Mechanisms to Detect Regulated Data in Long Text Area Fields
 
+<span title="Appropriate technical and organizational measures for personal data include knowing where regulated data is stored and being able to scope exposure."><Badge type="info" text="GDPR" /></span> <span title="Reasonable security and privacy-response obligations require knowing where California personal information is stored."><Badge type="info" text="CCPA/CPRA" /></span>
+
 **Control Statement:** The organization must implement a mechanism that continuously or periodically analyzes the contents of all Long Text Area fields to identify the presence of regulated or personal data.
 
 **Description:**  
@@ -31,6 +33,8 @@ Salesforce does not natively scan the contents of Long Text Area fields for regu
 
 ### SBS-DATA-002: Maintain an Inventory of Long Text Area Fields Containing Regulated Data
 
+<span title="Accountability and privacy-response obligations require an inventory of where personal data is stored."><Badge type="info" text="GDPR" /></span> <span title="Deletion and disclosure response depend on knowing where California personal information resides."><Badge type="info" text="CCPA/CPRA" /></span>
+
 **Control Statement:** The organization must maintain an up-to-date inventory of all Long Text Area fields that are known or detected to contain regulated or personal data.
 
 **Description:**  
@@ -57,6 +61,8 @@ Salesforce does not maintain or provide an inventory of Long Text Area fields co
 
 ### SBS-DATA-003: Maintain Tested Backup and Recovery for Salesforce Data and Metadata
 
+<span title="Article 32 expects the ability to restore availability and access to personal data in a timely manner after an incident."><Badge type="info" text="GDPR" /></span> <span title="Backup and restoration are direct ISO 27001 controls for resilience and recovery capability."><Badge type="info" text="ISO 27001" /></span>
+
 **Control Statement:** Salesforce production orgs must maintain a documented backup and recovery capability for Salesforce data and metadata, and must test restoration on a defined schedule.
 
 **Description:**  
@@ -81,6 +87,8 @@ Without reliable backups and tested restoration procedures, organizations cannot
 Salesforce does not provide automatic, comprehensive backup and restore for all data and metadata by default.
 
 ### SBS-DATA-004: Require Field History Tracking for Sensitive Fields
+
+<span title="Accountability for changes to personal data and sensitive attributes supports demonstrating appropriate technical and organizational measures."><Badge type="info" text="GDPR" /></span> <span title="Audit logging and change traceability for sensitive data are directly supported by ISO 27001 logging and monitoring objectives."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** The organization must maintain a documented list of sensitive fields and ensure Field History Tracking is enabled for each listed field on all in-scope objects.
 

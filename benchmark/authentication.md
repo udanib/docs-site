@@ -4,6 +4,8 @@ This section defines controls related to user authentication in Salesforce produ
 
 ### SBS-AUTH-001: Enable Organization-Wide SSO Enforcement Setting
 
+<span title="Restricting who can authenticate to systems holding ePHI; SSO enforcement is a direct access control."><Badge type="info" text="HIPAA" /></span> <span title="Appropriate technical measures for access to personal data; centralized authentication supports accountability."><Badge type="info" text="GDPR" /></span> <span title="Access control and authentication management; SSO enforcement is a direct technical control."><Badge type="info" text="NIST" /></span> <span title="Reasonable security requires strong authentication and access control for personal information."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Logical access and identity management require centralized authentication and credential control."><Badge type="info" text="SOC 2" /></span> <span title="Access control (A.5.15–A.5.18); authentication and identity management are Annex A requirements."><Badge type="info" text="ISO 27001" /></span>
+
 **Control Statement:** Salesforce production orgs must enable the org-level setting that disables Salesforce credential logins for all users.
 
 **Description:**  
@@ -27,6 +29,8 @@ Without the org-level SSO enforcement setting enabled, users can authenticate di
 By default, Salesforce does not enable "Disable login with Salesforce credentials." All users can authenticate with Salesforce usernames and passwords unless this setting is explicitly enabled.
 
 ### SBS-AUTH-002: Govern and Document All Users Permitted to Bypass Single Sign-On
+
+<span title="Documenting who can access ePHI outside standard SSO; inventory supports access control evidence."><Badge type="info" text="HIPAA" /></span> <span title="Accountability for who had access and why; documented exceptions support appropriate measures."><Badge type="info" text="GDPR" /></span> <span title="Account management and access control require documented justification for exceptions."><Badge type="info" text="NIST" /></span> <span title="IAM requires documented governance of identity and access exceptions."><Badge type="info" text="SOC 2" /></span> <span title="Access control and privilege management (A.5.15–A.5.18); documented exceptions are expected."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** All users who do not have the "Is Single Sign-On Enabled" permission must be explicitly authorized, documented in a system of record, and limited to approved administrative or break-glass use cases.
 
@@ -57,6 +61,8 @@ Users permitted to bypass SSO represent exceptions to centralized identity gover
 By default, no users are assigned the "Is Single Sign-On Enabled" permission, meaning all users can authenticate with Salesforce credentials. Once SBS-AUTH-001 is implemented and the org-level setting is enabled, users must be explicitly assigned this permission to require SSO authentication.
 
 ### SBS-AUTH-003: Prohibit Broad or Unrestricted Profile Login IP Ranges
+
+<span title="Access control includes network-based restrictions and boundary enforcement."><Badge type="info" text="NIST" /></span> <span title="Logical access controls may include network or location-based restrictions."><Badge type="info" text="SOC 2" /></span> <span title="Access control (A.5.15–A.5.18); network and connection restrictions support secure access."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Profiles in Salesforce production orgs must not contain login IP ranges that effectively permit access from the full public internet or other overly broad ranges that bypass network-based access controls.
 
@@ -90,6 +96,8 @@ Overly broad login IP ranges effectively disable network-based access controls, 
 Salesforce profiles do not include login IP ranges by default; they must be explicitly configured.
 
 ### SBS-AUTH-004: Enforce Strong Multi-Factor Authentication for External Users with Substantial Access to Sensitive Data 
+
+<span title="Restricting and securing access to ePHI; MFA for sensitive access is a direct access control."><Badge type="info" text="HIPAA" /></span> <span title="Appropriate technical measures for personal data; strong authentication for sensitive access is expected."><Badge type="info" text="GDPR" /></span> <span title="Authentication and access control; MFA for high-risk users is a named NIST expectation."><Badge type="info" text="NIST" /></span> <span title="Reasonable security for personal information requires strong authentication where access is substantial."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Identity and access management require multi-factor authentication for sensitive access."><Badge type="info" text="SOC 2" /></span> <span title="Access control and authentication (A.5.15–A.5.18); strong authentication for sensitive access."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** 
 All Salesforce interactive authentication flows for external human users with substantial access to sensitive data must enforce multi-factor authentication that includes at least one strong authentication factor.

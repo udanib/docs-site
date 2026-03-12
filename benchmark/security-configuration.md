@@ -4,6 +4,8 @@ This section defines controls related to Salesforce platform security settings a
 
 ### SBS-SECCONF-001: Establish a Salesforce Health Check Baseline
 
+<span title="Secure configuration and change-management controls require a defined security baseline for platform settings."><Badge type="info" text="ISO 27001" /></span>
+
 **Control Statement:** Salesforce production orgs must define and maintain a Salesforce Health Check baseline—including Salesforce's native baseline XML or an equivalent customized baseline—and ensure it reflects the organization's intentional security configuration posture.
 
 **Description:**  
@@ -28,6 +30,8 @@ Without a defined Health Check baseline, organizations have no authoritative ref
 Salesforce provides a default baseline but does not require organizations to review, customize, or maintain it.
 
 ### SBS-SECCONF-002: Review and Remediate Salesforce Health Check Deviations
+
+<span title="Secure configuration monitoring and change-management controls require periodic review of deviations from the approved security baseline."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Salesforce production orgs must periodically review Health Check results against the defined baseline and remediate deviations or formally document approved exceptions.
 

@@ -4,6 +4,8 @@ This section defines controls related to file and content security in Salesforce
 
 ### SBS-FILE-001: Require Expiry Dates on Public Content Links
 
+<span title="Appropriate technical and organizational measures for personal data include limiting how long externally shared content remains accessible."><Badge type="info" text="GDPR" /></span> <span title="Reasonable security for California personal information includes limiting indefinite public exposure through shared links."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Information access restriction and secure handling of shared content support time-bounded external access."><Badge type="info" text="ISO 27001" /></span>
+
 **Control Statement:** Organizations must ensure that Public Content links have an appropriate expiry date.
 
 **Description:**  
@@ -26,6 +28,8 @@ Without an expiry date, Public Content links remain permanently accessible, exte
 When a user manually creates a Public Content link on a piece of content, Salesforce suggests an expiry date. This can be overridden by the user. In the past, the default was no expiry date.
 
 ### SBS-FILE-002: Require Passwords on Public Content Links for Sensitive Content
+
+<span title="Restricting access to ePHI shared through external links requires an authentication layer before the content can be viewed."><Badge type="info" text="HIPAA" /></span> <span title="Appropriate technical measures for personal data include requiring authentication for sensitive externally shared content."><Badge type="info" text="GDPR" /></span> <span title="Access control requires restricting anonymous access to sensitive content distributed through public links."><Badge type="info" text="NIST" /></span> <span title="Reasonable security for personal information includes password-protecting sensitive public file links."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Logical access controls require sensitive content shared externally to be limited to authorized recipients."><Badge type="info" text="SOC 2" /></span> <span title="Access control and information access restriction require protection of sensitive externally shared content."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Organizations must ensure that Public Content links to sensitive content have a password.
 
@@ -51,6 +55,8 @@ Without a password, anyone who obtains an unexpired Public Content link—throug
 When a user manually creates a Public Content link on a piece of content, the default is to not have a password.
 
 ### SBS-FILE-003: Periodic Review and Cleanup of Public Content Links
+
+<span title="Accountability for personal data sharing includes reviewing externally shared links and removing links that are no longer justified."><Badge type="info" text="GDPR" /></span> <span title="Reasonable security includes reviewing and removing stale public links that may expose personal information."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Periodic review of externally shared content supports access governance and secure information handling."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Organizations must implement a recurring process to review all active Public Content links and remove or remediate links that are no longer required, lack appropriate controls, or were created outside of current policy.
 

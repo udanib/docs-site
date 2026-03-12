@@ -4,7 +4,7 @@ This section defines controls related to permission sets, permission set groups,
 
 ### SBS-ACS-001: Enforce a Documented Permission Set Model
 
-<span title="Requires access controls and procedures to document who can access ePHI; a documented permission model provides an auditable structure."><Badge type="info" text="HIPAA" /></span> <span title="Requires appropriate technical measures and accountability; a documented, enforced permission model supports both."><Badge type="info" text="GDPR" /></span> <span title="Requires a defined, auditable access structure for account management, access enforcement, and least privilege."><Badge type="info" text="NIST" /></span> <span title="Reasonable security and access controls for personal information; a documented permission model supports accountability."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Requires logical access controls and identity/access management; a permission set model is foundational to IAM."><Badge type="info" text="SOC 2" /></span>
+<span title="Requires a defined, auditable access structure for account management, access enforcement, and least privilege."><Badge type="info" text="NIST" /></span> <span title="Requires logical access controls and identity/access management; a permission set model is foundational to IAM."><Badge type="info" text="SOC 2" /></span> <span title="Access control and information access restriction (A.5.15–A.5.18, A.8.3); documented model supports Annex A."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** All permission sets, permission set groups, and profiles must conform to a documented model maintained in a system of record and enforced continuously.
 
@@ -40,7 +40,7 @@ Salesforce does not enforce any specific permission set model. Profiles, permiss
 
 ### SBS-ACS-002: Documented Justification for All `API-Enabled` Authorizations
 
-<span title="Requires knowing who can access ePHI and by what means; documented API access supports access control and audit."><Badge type="info" text="HIPAA" /></span> <span title="Requires appropriate measures and accountability for who can process personal data at scale."><Badge type="info" text="GDPR" /></span> <span title="Requires least privilege and documented justification for elevated or programmatic access."><Badge type="info" text="NIST" /></span> <span title="Reasonable security requires visibility into who can extract or modify personal information."><Badge type="info" text="CCPA/CPRA" /></span> <span title="IAM and logical access require documented justification for API and bulk access capabilities."><Badge type="info" text="SOC 2" /></span>
+<span title="Requires least privilege and documented justification for elevated or programmatic access."><Badge type="info" text="NIST" /></span> <span title="IAM and logical access require documented justification for API and bulk access capabilities."><Badge type="info" text="SOC 2" /></span> <span title="Access control and privilege management (A.5.15–A.5.18); documented justification for elevated access."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Every authorization granting the `API Enabled` permission must have documented business or technical justification recorded in a system of record.
 
@@ -69,7 +69,7 @@ Salesforce does not require or maintain a system of record for API-enabled autho
 
 ### SBS-ACS-003: Documented Justification for `Approve Uninstalled Connected Apps` Permission
 
-<span title="Access to ePHI via third-party applications must be controlled and limited to authorized use."><Badge type="info" text="HIPAA" /></span> <span title="Third-party access to personal data must be restricted and demonstrably governed."><Badge type="info" text="GDPR" /></span> <span title="Access enforcement requires controlling which applications can be authorized to access system data."><Badge type="info" text="NIST" /></span> <span title="Reasonable security requires preventing unauthorized applications from accessing personal information."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Logical access controls must restrict which applications users can authorize to access the system."><Badge type="info" text="SOC 2" /></span>
+<span title="Access to ePHI via third-party applications must be controlled and limited to authorized use."><Badge type="info" text="HIPAA" /></span> <span title="Third-party access to personal data must be restricted and demonstrably governed."><Badge type="info" text="GDPR" /></span> <span title="Access enforcement requires controlling which applications can be authorized to access system data."><Badge type="info" text="NIST" /></span> <span title="Reasonable security requires preventing unauthorized applications from accessing personal information."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Logical access controls must restrict which applications users can authorize to access the system."><Badge type="info" text="SOC 2" /></span> <span title="Access control (A.5.15–A.5.18); restricting which applications can be authorized is an expected control."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** The `Approve Uninstalled Connected Apps` permission must only be assigned to highly trusted users with documented justification and must not be granted to end-users.
 
@@ -102,7 +102,7 @@ The `Approve Uninstalled Connected Apps` permission is not granted by default in
 
 ### SBS-ACS-004: Documented Justification for All Super Admin–Equivalent Users
 
-<span title="Requires identification and justification of who has unrestricted access to ePHI."><Badge type="info" text="HIPAA" /></span> <span title="Requires accountability for who can access and process personal data without restriction."><Badge type="info" text="GDPR" /></span> <span title="Privileged access must be documented, justified, and limited to authorized individuals."><Badge type="info" text="NIST" /></span> <span title="Reasonable security requires knowing and justifying who has full access to personal information."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Identity and access management require documented justification for privileged and administrative access."><Badge type="info" text="SOC 2" /></span>
+<span title="Requires identification and justification of who has unrestricted access to ePHI."><Badge type="info" text="HIPAA" /></span> <span title="Requires accountability for who can access and process personal data without restriction."><Badge type="info" text="GDPR" /></span> <span title="Privileged access must be documented, justified, and limited to authorized individuals."><Badge type="info" text="NIST" /></span> <span title="Reasonable security requires knowing and justifying who has full access to personal information."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Identity and access management require documented justification for privileged and administrative access."><Badge type="info" text="SOC 2" /></span> <span title="Privileged access rights (A.5.18); justification and documentation for administrative access are required."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** All users with simultaneous `View All Data`, `Modify All Data`, and `Manage Users` permissions must be documented in a system of record with clear business or technical justification.
 
@@ -134,7 +134,7 @@ Salesforce does not limit the number of users who may receive these permissions,
 
 ### SBS-ACS-005: Only Use Custom Profiles for Active Users
 
-<span title="Access to ePHI must be governed by the organization, not by default vendor profiles."><Badge type="info" text="HIPAA" /></span> <span title="Appropriate technical measures require the organization to control access boundaries, not the vendor."><Badge type="info" text="GDPR" /></span> <span title="Access enforcement and least privilege require the organization to define and maintain access boundaries."><Badge type="info" text="NIST" /></span> <span title="Reasonable security requires controlling which permissions apply to users of systems holding personal information."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Logical access must be defined and controlled by the organization rather than by default configurations."><Badge type="info" text="SOC 2" /></span>
+<span title="Access enforcement and least privilege require the organization to define and maintain access boundaries."><Badge type="info" text="NIST" /></span> <span title="Logical access must be defined and controlled by the organization rather than by default configurations."><Badge type="info" text="SOC 2" /></span> <span title="Access control and secure configuration (A.5.15–A.5.18, A.8.3); organization-defined access boundaries."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:**
 All active users must be assigned custom profiles. The out-of-the-box standard profiles must not be used.
@@ -159,7 +159,7 @@ Salesforce does not require to create and assign custom profiles.
 
 ### SBS-ACS-006: Documented Justification for `Use Any API Client` Permission
 
-<span title="Bypassing application allowlisting can expose ePHI to unauthorized applications; must be tightly controlled."><Badge type="info" text="HIPAA" /></span> <span title="Third-party and API access to personal data must be restricted and justified."><Badge type="info" text="GDPR" /></span> <span title="Access enforcement requires controlling which API clients can be used to access system data."><Badge type="info" text="NIST" /></span> <span title="Reasonable security requires preventing unrestricted API access to personal information."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Logical access must restrict which clients can access the system; bypass must be justified and limited."><Badge type="info" text="SOC 2" /></span>
+<span title="Bypassing application allowlisting can expose ePHI to unauthorized applications; must be tightly controlled."><Badge type="info" text="HIPAA" /></span> <span title="Third-party and API access to personal data must be restricted and justified."><Badge type="info" text="GDPR" /></span> <span title="Access enforcement requires controlling which API clients can be used to access system data."><Badge type="info" text="NIST" /></span> <span title="Reasonable security requires preventing unrestricted API access to personal information."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Logical access must restrict which clients can access the system; bypass must be justified and limited."><Badge type="info" text="SOC 2" /></span> <span title="Access control (A.5.15–A.5.18); controlling and justifying API client access is an expected control."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** The `Use Any API Client` permission, which bypasses default behavior in orgs with "API Access Control" enabled, must only be assigned to highly trusted users with documented justification and must not be granted to end-users.
 
@@ -193,7 +193,7 @@ The `Use Any API Client` permission is not granted by default in Salesforce. Org
 
 ### SBS-ACS-007: Maintain Inventory of Non-Human Identities
 
-<span title="Requires accountability for all identities that can access ePHI, including system and integration accounts."><Badge type="info" text="HIPAA" /></span> <span title="Requires knowing which systems and automated processes can access personal data."><Badge type="info" text="GDPR" /></span> <span title="Account management requires an inventory of all accounts, including non-human and system accounts."><Badge type="info" text="NIST" /></span> <span title="Reasonable security requires an inventory of accounts that can access personal information."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Identity management requires an authoritative inventory of all identities with system access."><Badge type="info" text="SOC 2" /></span>
+<span title="Account management requires an inventory of all accounts, including non-human and system accounts."><Badge type="info" text="NIST" /></span> <span title="Identity management requires an authoritative inventory of all identities with system access."><Badge type="info" text="SOC 2" /></span> <span title="Account management and asset management (A.5.15, A.8.1); inventory of identities is required."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Organizations must maintain an authoritative inventory of all non-human identities, including integration users, automation users, bot users, and API-only accounts.
 
@@ -226,7 +226,7 @@ Salesforce does not provide a built-in inventory or classification system for no
 
 ### SBS-ACS-008: Restrict Broad Privileges for Non-Human Identities
 
-<span title="Access to ePHI by automated systems must be limited to the minimum necessary and justified."><Badge type="info" text="HIPAA" /></span> <span title="Systems processing personal data must operate with minimum necessary access and justification."><Badge type="info" text="GDPR" /></span> <span title="Least privilege applies to all accounts, including non-human; broad privileges require justification."><Badge type="info" text="NIST" /></span> <span title="Reasonable security requires limiting automated access to personal information to what is necessary."><Badge type="info" text="CCPA/CPRA" /></span> <span title="IAM requires least privilege for all identities, including integration and system accounts."><Badge type="info" text="SOC 2" /></span>
+<span title="Least privilege applies to all accounts, including non-human; broad privileges require justification."><Badge type="info" text="NIST" /></span> <span title="IAM requires least privilege for all identities, including integration and system accounts."><Badge type="info" text="SOC 2" /></span> <span title="Access control and least privilege (A.5.15–A.5.18); privileged access for system accounts must be justified."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Non-human identities must not be assigned permissions that bypass sharing rules or grant administrative capabilities unless documented business justification exists.
 
@@ -265,7 +265,7 @@ Salesforce does not restrict the assignment of broad privileges to non-human ide
 
 ### SBS-ACS-009: Implement Compensating Controls for Privileged Non-Human Identities
 
-<span title="Defense-in-depth for privileged accounts is an expected control family requirement."><Badge type="info" text="NIST" /></span> <span title="Layered controls for privileged and system accounts are expected for logical access and IAM."><Badge type="info" text="SOC 2" /></span>
+<span title="Defense-in-depth for privileged accounts is an expected control family requirement."><Badge type="info" text="NIST" /></span> <span title="Layered controls for privileged and system accounts are expected for logical access and IAM."><Badge type="info" text="SOC 2" /></span> <span title="Defense-in-depth and secure system engineering (A.8.2); compensating controls for privileged access."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Non-human identities with permissions that bypass sharing rules or grant administrative capabilities must have compensating controls implemented to mitigate risk.
 
@@ -299,7 +299,7 @@ Salesforce does not require or enforce compensating controls for privileged non-
 
 ### SBS-ACS-010: Enforce Periodic Access Review and Recertification
 
-<span title="Requires evaluation and modification of access to ePHI; periodic review supports this obligation."><Badge type="info" text="HIPAA" /></span> <span title="Requires ability to demonstrate appropriate measures; periodic access recertification is expected."><Badge type="info" text="GDPR" /></span> <span title="Access reviews and recertification are required for account and access management."><Badge type="info" text="NIST" /></span> <span title="Reasonable security includes periodic review of who has access to personal information."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Periodic review of access and removal of inappropriate access are required IAM controls."><Badge type="info" text="SOC 2" /></span>
+<span title="Requires evaluation and modification of access to ePHI; periodic review supports this obligation."><Badge type="info" text="HIPAA" /></span> <span title="Requires ability to demonstrate appropriate measures; periodic access recertification is expected."><Badge type="info" text="GDPR" /></span> <span title="Access reviews and recertification are required for account and access management."><Badge type="info" text="NIST" /></span> <span title="Periodic review of access and removal of inappropriate access are required IAM controls."><Badge type="info" text="SOC 2" /></span> <span title="Access control and removal of access rights (A.5.18); periodic access review is an Annex A expectation."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** All user access and configuration influencing permissions and sharing must be formally reviewed and recertified at least annually by designated busines stakeholders, with documented approval and remediation of unauthorized or excessive access.
 
@@ -360,7 +360,7 @@ The process must establish clear ownership, defined frequency (minimum annual bu
 
 ### SBS-ACS-011: Enforce Governance of Access and Authorization Changes
 
-<span title="Access to ePHI must be granted through formal procedures and documented."><Badge type="info" text="HIPAA" /></span> <span title="Changes affecting access to personal data must be governed and auditable for accountability."><Badge type="info" text="GDPR" /></span> <span title="Access enforcement requires approval and audit trail for access grants and changes."><Badge type="info" text="NIST" /></span> <span title="Reasonable security requires governed, justified, and auditable access changes."><Badge type="info" text="CCPA/CPRA" /></span> <span title="IAM and change management require approval and audit trail for access and authorization changes."><Badge type="info" text="SOC 2" /></span>
+<span title="Access to ePHI must be granted through formal procedures and documented."><Badge type="info" text="HIPAA" /></span> <span title="Changes affecting access to personal data must be governed and auditable for accountability."><Badge type="info" text="GDPR" /></span> <span title="Access enforcement requires approval and audit trail for access grants and changes."><Badge type="info" text="NIST" /></span> <span title="IAM and change management require approval and audit trail for access and authorization changes."><Badge type="info" text="SOC 2" /></span> <span title="Change management and access control (A.8.3.2, A.5.18); governed access changes with audit trail."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** All changes to Salesforce user access and authorization must be governed through a documented process that requires approval, records business justification, and produces an auditable record of the change.
 
@@ -400,7 +400,7 @@ Salesforce does not enforce approval workflows or governance for access and auth
 
 ### SBS-ACS-012: Classify Users for Login Hours Restrictions
 
-<span title="Session and access control requirements include time-based or monitored access where appropriate."><Badge type="info" text="NIST" /></span> <span title="Logical access controls may include time-based restrictions or monitoring for sensitive roles."><Badge type="info" text="SOC 2" /></span>
+<span title="Session and access control requirements include time-based or monitored access where appropriate."><Badge type="info" text="NIST" /></span> <span title="Logical access controls may include time-based restrictions or monitoring for sensitive roles."><Badge type="info" text="SOC 2" /></span> <span title="Access control (A.5.15–A.5.18); time-based or monitored access for sensitive roles where appropriate."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Organizations must maintain a documented classification of users requiring login hours restrictions or equivalent off-hours authentication monitoring.
 

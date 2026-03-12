@@ -64,6 +64,8 @@ These streaming events allow external monitoring systems or SIEM platforms to re
 
 ### SBS-MON-001: Enable Event Monitoring Log Storage
 
+<span title="Demonstrating appropriate measures for personal data requires retaining the event telemetry needed to investigate access and exposure."><Badge type="info" text="GDPR" /></span> <span title="Logging controls require required security events to be generated and retained for investigation and evidence."><Badge type="info" text="ISO 27001" /></span>
+
 **Control Statement:** Organizations using Salesforce Event Monitoring must ensure that storage of required Event Monitoring logs is enabled for all event types necessary to support the organization's security monitoring and compliance policies.
 
 **Description:**  
@@ -124,6 +126,8 @@ Salesforce provides a limited set of Event Monitoring logs by default in Enterpr
 Additional event types and extended retention (up to one year) require the **Event Monitoring add-on**.
 
 ### SBS-MON-002: Retaining Event Logs
+
+<span title="Accountability and incident investigation for personal data depend on retaining security logs for a sufficient period."><Badge type="info" text="GDPR" /></span> <span title="Logging and evidence-retention controls require security logs to remain available and protected from tampering."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Organizations must retain security event logs for the defined retention period and implement measures to protect the logs from tampering and unauthorized deletion to ensure forensic availability.
 
@@ -204,6 +208,8 @@ Typical native Salesforce retention periods include:
 
 ### SBS-MON-003: Monitor for Suspicious Logins
 
+<span title="Investigating suspicious authentication activity helps demonstrate who accessed systems processing personal data and whether access was legitimate."><Badge type="info" text="GDPR" /></span> <span title="Monitoring login anomalies is a direct access-auditing control used to detect compromised accounts."><Badge type="info" text="NIST" /></span> <span title="Reasonable security for personal information includes detecting anomalous and potentially compromised login activity."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Identity and access management controls routinely expect monitoring for suspicious authentication activity."><Badge type="info" text="SOC 2" /></span> <span title="Logging and monitoring controls require detection and investigation of anomalous authentication events."><Badge type="info" text="ISO 27001" /></span>
+
 **Control Statement:** Organizations must continuously monitor and alert on anomalous login patterns to promptly detect and mitigate compromised accounts and application credentials.
 
 **Description:**  
@@ -248,6 +254,8 @@ Failure to continuously monitor and rapidly respond to suspicious login activity
 Salesforce natively provides the raw login data in the LoginHistory object. However, without additional paid features or products or custom in-house development, Salesforce does not automatically detect or alert on the sophisticated, anomalous login patterns described in this control. Detection is entirely manual, relying on an administrator running reports against the raw LoginHistory data.
 
 ### SBS-MON-004: Monitor for Suspicious API Activity
+
+<span title="Accountability for personal data access includes detecting anomalous API-based access, export, and manipulation activity."><Badge type="info" text="GDPR" /></span> <span title="Audit of access and account activity includes monitoring API use for anomalous or unauthorized behavior."><Badge type="info" text="NIST" /></span> <span title="Reasonable security for personal information includes monitoring for suspicious API-based access and exfiltration patterns."><Badge type="info" text="CCPA/CPRA" /></span> <span title="Logical access and non-human identity controls routinely expect monitoring of integration and API activity for abuse."><Badge type="info" text="SOC 2" /></span> <span title="Logging and monitoring controls require organizations to analyze detailed activity logs for suspicious API behavior."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Organizations must continuously monitor and alert on all API activity to establish a baseline, detect anomalous and malicious activity, and identify potential application and integration abuse in a timely manner.
 
@@ -296,6 +304,8 @@ Failure to monitor API activity creates a critical blind spot for post-authentic
 Salesforce provides some raw API usage data (APITotalUsage), but it does not automatically detect, baseline, or alert on sophisticated API anomalies. Automated anomaly detection requires paid add-ons (like Event Monitoring), third-party solutions, or custom in-house development.
 
 ### SBS-MON-005: Monitor API Usage Against Limits
+
+<span title="Capacity and availability management controls expect monitoring that prevents service disruption from exhausted API quotas."><Badge type="info" text="ISO 27001" /></span>
 
 **Control Statement:** Organizations must implement continuous, real-time monitoring and alerting on current API usage against defined Salesforce limits to proactively prevent service disruptions.
 
