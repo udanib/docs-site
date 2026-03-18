@@ -188,6 +188,12 @@ Salesforce production orgs must define and maintain a Salesforce Health Check ba
 **SBS-SECCONF-002: Review and Remediate Salesforce Health Check Deviations**
 Salesforce production orgs must periodically review Health Check results against the defined baseline and remediate deviations or formally document approved exceptions.
 
+## Autonomous Agent and Intelligent Automation Security
+
+**SBS-AUTO-001: Enforce Pre-Execution Governance Validation for Autonomous Agent Actions** All autonomous agents and automated execution pipelines that initiate write-path operations must evaluate the executing context against a defined governance policy before any DML or external callout proceeds.
+
+**SBS-AUTO-002: Maintain Durable Audit Record of Autonomous Agent Action Decisions** Organisations must retain a durable, queryable record of each autonomous agent action decision, capturing the executing identity, the governance evaluation outcome, and the action type attempted.
+
 ---
 
 *Total Controls: 54*
